@@ -1,0 +1,2 @@
+# CH-012 geometry progress
+2026-11-26: PR #4 merged; its PR CI run 45826378810 succeeded. Added indexed unit sphere geometry and two JVM tests for the future GLES renderer. This is not a rendered orb or visual acceptance. CI pending. Both expected original PNG paths under assets/reference returned 404; exact originals still needed. Next: shader deformation, GL resource ownership and device validation. No legacy changes.
