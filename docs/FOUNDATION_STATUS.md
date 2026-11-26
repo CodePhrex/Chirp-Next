@@ -3,3 +3,6 @@ CH-008/009: Android bootstrap and CI proposed; build evidence pending. The lab d
 
 ## CI follow-up
 Run 45741100377 failed before compilation: setup-android attempted obsolete SDK package `tools`. Commit c7af2737fcb891891cd51d208e4d39fcfa1ac829 replaces that action with hosted-runner sdkmanager provisioning of API 35 and build tools 35.0.0. Recheck CI before merge; no APK or physical-device validation yet. Original artwork upload remains pending.
+
+## Second CI follow-up
+Run 45753424666 failed on Ubuntu 26.04 at `command -v sdkmanager` before compilation. Commit 1ab5c6040208b3a55f714c5bff603af87ca99380 pins Ubuntu 24.04, resolves sdkmanager from SDK root with PATH fallback, and upgrades setup-java to v5 while retaining Java 17. Compatibility and all build gates remain pending. No merge or device verification. CH-003 artwork still pending.
