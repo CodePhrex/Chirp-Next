@@ -1,0 +1,3 @@
+# CH-014 — GLES renderer core
+
+2026-11-27: Added GL-thread renderer compiling/linking existing shaders, uploading indexed sphere buffers, binding animation and normalized audio uniforms, handling context recreation and explicit GL-thread release. This is not yet connected to Compose or microphone capture. Android CI pending; runtime compilation, visual fidelity and performance unverified. Next: lifecycle-aware GLES3 host, error handling UI, physical-device smoke test, then real audio capture and state/haptic integration. Original reference artwork remains an outstanding acceptance dependency. No placeholder or legacy repository changes.
