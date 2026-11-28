@@ -29,6 +29,8 @@ internal class MicrophoneCapture(context: Context) {
                 val format = AudioFormat.ENCODING_PCM_16BIT
                 val minimum = AudioRecord.getMinBufferSize(rate, channel, format)
                 check(minimum > 0) { "Microphone format unavailable" }
+                if (!requested) return@Thread
+                check(app.checkSelfPermission(Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED) { "Microphone permission revoked" }
                 val input = AudioRecord(MediaRecorder.AudioSource.MIC, rate, channel, format, maxOf(minimum, 2048))
                 recorder = input
                 check(input.state == AudioRecord.STATE_INITIALIZED) { "Microphone initialization failed" }
